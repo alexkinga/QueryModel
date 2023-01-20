@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-title></mat-card-title>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let item of jobWithTags$ | async">{{item.title}}
+        <mat-chip-list aria-label="Fish selection">
+          <mat-chip *ngFor="let element of item.jobTags">
+            {{element}}
+          </mat-chip>
+        </mat-chip-list>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
