@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/co
 import {map, Observable, combineLatest} from 'rxjs';
 import {JobModel} from '../../models/job.model';
 import {JobService} from '../../services/job.service';
-import {JobWithTagsQueryQueryModel} from "../../models/job-with-tags-query.query-model";
+import {JobWithTagsQueryQueryModel} from "../../query-models/job-with-tags-query.query-model";
 import {JobTagModel} from "../../models/job-tag.model";
 
 @Component({

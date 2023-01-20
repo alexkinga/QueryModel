@@ -2,6 +2,7 @@
   "entityRelations": {
     "component": {
       "model": ["PROPERTY"],
+      "queryModel": ["PROPERTY"],
       "service": ["CONSTRUCTOR"],
       "router": ["CONSTRUCTOR"],
       "activatedRoute": ["CONSTRUCTOR"]

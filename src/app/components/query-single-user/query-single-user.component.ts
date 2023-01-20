@@ -2,8 +2,7 @@ import {ChangeDetectionStrategy, Component, ViewEncapsulation} from '@angular/co
 import {combineLatest, map, Observable} from 'rxjs';
 import {UserModel} from '../../models/user.model';
 import {UserService} from '../../services/user.service';
-import {RoleService} from "../../services/role.service";
-import {UserWithRoleQueryModel} from "../../models/user-with-role.query-model";
+import {UserWithRoleQueryModel} from "../../query-models/user-with-role.query-model";
 import {RoleModel} from "../../models/role.model";
 
 @Component({
@@ -15,12 +14,12 @@ import {RoleModel} from "../../models/role.model";
 export class QuerySingleUserComponent {
   readonly userWithRole$: Observable<UserWithRoleQueryModel[]> = combineLatest([
     this._userService.getAllUsers(),
-    this._roleService.getAllRoles()
+    this._userService.getAllRoles()
   ]).pipe(
     map(([users, roles]: [UserModel[], RoleModel[]]) => this._mapToUserWithRoleQuery(users, roles))
   );
 
-  constructor(private _userService: UserService, private _roleService: RoleService) {
+  constructor(private _userService: UserService) {
   }
 
   private _mapToUserWithRoleQuery(users: UserModel[], roles: RoleModel[]): UserWithRoleQueryModel[] {
