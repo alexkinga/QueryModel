@@ -1,0 +1,10 @@
+<mat-grid-list cols="2" rowHeight="12:1">
+  <mat-grid-tile *ngFor="let item of userWithRoleAndDept$ | async">
+    <mat-card>
+      <mat-card-title>{{ item.email }}</mat-card-title>
+      <mat-card-content>
+        Role is {{ item.role }} and works in {{ item.department }}
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
